@@ -1,11 +1,11 @@
-import { Expect, Equal } from 'type-testing';
+import { Expect, Equal, NotEqual } from 'type-testing';
 
-const hello = "HELLO!!!"
+const hello = "hello"
 
-type test = Expect<Equal<typeof hello, 'HELLO!!!'>>;
+type test = Expect<Equal<typeof hello, 'hello'>>;
 
 const hello2 = "moocow"
 
-// type test2 = Expect<Equal<typeof hello2, 'HELLO!!!'>>;
+type test2 = Expect<NotEqual<typeof hello, 'world'>>;
 
 console.log("hello world");

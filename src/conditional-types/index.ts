@@ -1,0 +1,1 @@
+// https://typehero.dev/challenge/type-lookup/solutions/649
