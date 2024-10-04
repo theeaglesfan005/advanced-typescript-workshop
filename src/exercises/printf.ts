@@ -1,5 +1,8 @@
 // source: https://github.com/type-challenges/type-challenges/tree/main/questions/00545-hard-printf
 
+// Maybe use this instead?
+// sources: https://github.com/type-challenges/type-challenges/blob/main/questions/00147-hard-c-printf-parser/test-cases.ts
+
 // Medium
 
 // Recursion, Template Literals, 
