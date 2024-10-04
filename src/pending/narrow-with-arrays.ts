@@ -1,7 +1,7 @@
 // source: https://github.com/total-typescript/advanced-patterns-workshop/blob/main/src/07-challenges/32-narrow-with-arrays.solution.ts
 
 // TODO:
-
+// Medium, generic with constraints, utitlity types, index accessed types
 import { Equal, Expect } from "type-testing";
 
 interface Fruit {
