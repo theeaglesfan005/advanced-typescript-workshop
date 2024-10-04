@@ -1,6 +1,6 @@
 import { Equal, Expect } from "type-testing";
 
-// TAGS: medium, conditional-types, generics, template-literal-types
+// TAGS: medium, conditional-types, generics, template-literal-types, recursive
 // https://github.com/type-challenges/type-challenges/blob/main/questions/00106-medium-trimleft/README.md
 
 // Implement TrimLeft which takes an exact string type and returns a new string with the whitespace beginning removed.

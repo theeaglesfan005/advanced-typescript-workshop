@@ -1,11 +1,12 @@
 import { Equal, Expect } from "type-testing";
 // https://github.com/type-challenges/type-challenges/blob/main/questions/05360-medium-unique/README.md
 
-type Includes<T, U> = U extends [infer F, ...infer Rest]
-  ? Equal<F, T> extends true
-    ? true
-    : Includes<T, Rest>
-  : false;
+// TAGS: hard, conditional types, recursion, index accessed types, arrays, generics with constraint
+
+/**
+ * Hint!
+ * you need to use Equal
+ */
 
 type Unique<TInput extends any[], TOutput extends any[] = []> = TInput extends []
   ? TOutput
