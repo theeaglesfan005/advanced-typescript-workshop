@@ -1,6 +1,8 @@
 // source: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/04-conditional-types-and-infer/27-infer-in-union-types.solution.2.ts
 
-// TODO: 
+// Medium
+
+// Distribution, Conditional Types
 
 import { Equal, Expect } from "type-testing";
 

@@ -1,4 +1,9 @@
-// // TODO
+// Hard
+
+// Conditional Types, Template Literal, Recursive
+
+// TODO: grab test cases
+// TODO: consider removing requirements
 
 import { Prettify } from "../prettify";
 

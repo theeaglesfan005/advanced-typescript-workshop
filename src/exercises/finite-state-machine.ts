@@ -1,17 +1,12 @@
 // source: https://github.com/total-typescript/advanced-patterns-workshop/blob/main/src/06-identity-functions/29-finite-state-machine.problem.ts
 
-// TODO:
+// Easy
 
-type NoInfer<T> = [T][T extends any ? 0 : never];
+// Utility Types, NoInfer
 
-/**
- * Clue: NoInfer is part of the solution!
- *
- * You'll need to modify the interface below
- * to get it to work.
- */
 interface FSMConfig<TState extends string> {
-  initial: TState;
+  // initial: TState;
+  initial: NoInfer<TState>;// <-- solution
   states: Record<
     TState,
     {

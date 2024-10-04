@@ -1,6 +1,8 @@
 // source: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/06-challenges/39-discriminated-union-with-unique-values-to-object.solution.ts
 
-// TODO: 
+// Medium
+
+// Mapped Types, Conditional Types
 
 import { Equal, Expect } from "type-testing";
 
@@ -16,9 +18,11 @@ type Route =
   | { route: "/admin" }
   | { route: "/admin/users" };
 
-type RoutesObject = unknown;
+type RoutesObject = {
+  [R in Route as R["route"]]: R extends { search: infer S } ? S : never;
+};
 
-type tests = [
+type cases = [
   Expect<
     Equal<
       RoutesObject,

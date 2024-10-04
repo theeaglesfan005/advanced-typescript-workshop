@@ -1,4 +1,5 @@
-// TODO
+// TODO:
+// Rewrite into an exercise
 
 type EventHandler<T extends string> = (type: T, event: any) => void;
 
@@ -25,16 +26,3 @@ interface FakeProps {
 type PropKeys = keyof FakeProps;
 
 type A = Extract<PropKeys, `on${string}`>;
-
-type Events =
-    | {
-          type: "click";
-          clicks: number;
-      }
-    | { type: "error"; error: Error }
-    | { type: "moo"; moo: "cow" };
-
-// declare function emit<T extends Events, K extends T['type']>(type: K, payload: Omit<Extract<{type:K}, K>, 'type'>): void
-declare function emit<K extends Events["type"]>(type: K, payload: Omit<Extract<Events, { type: K }>, "type">): void;
-
-emit("error", { error: new Error("") });

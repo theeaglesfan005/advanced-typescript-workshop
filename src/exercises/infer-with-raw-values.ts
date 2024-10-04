@@ -1,6 +1,8 @@
 // source: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/04-conditional-types-and-infer/23-infer-with-raw-values.solution.1.ts
 
-// TODO:
+// Easy
+
+// Conditional Types
 
 import { Equal, Expect } from "type-testing";
 
