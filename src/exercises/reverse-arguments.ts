@@ -1,8 +1,10 @@
+// source: https://github.com/type-challenges/type-challenges/blob/main/questions/03196-medium-flip-arguments/README.md
+
 import { Expect, Equal } from "type-testing";
 
 // Medium
 
-// Utility Types, Conditional Types
+// Utility Types, Conditional Types, Recursion
 
 type FlipArray<T extends any[]> = T extends [infer First, ...infer Rest] ? [...FlipArray<Rest>, First] : []
 type FlipArguments<T extends (...args: any) => any> = (...args: [...FlipArray<Parameters<T>>]) => ReturnType<T>
