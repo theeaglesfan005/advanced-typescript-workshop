@@ -2,6 +2,8 @@
 
 // Utility Types, Pick and Omit, Intersections
 
+// TODO: add story about how backend endpoints cannot be trusted and include more cases
+
 import { Expect, Equal } from "type-testing";
 import { Prettify } from "../prettify";
 
