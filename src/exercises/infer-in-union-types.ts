@@ -1,8 +1,7 @@
+// difficulty: easy
+// tags: conditional-types, distribution
+
 // source: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/04-conditional-types-and-infer/27-infer-in-union-types.solution.2.ts
-
-// Medium
-
-// Distribution, Conditional Types
 
 import { Equal, Expect } from "type-testing";
 
@@ -30,5 +29,5 @@ type GetParserResult<T> = T extends
 type tests = [
   Expect<Equal<GetParserResult<typeof parser1>, number>>,
   Expect<Equal<GetParserResult<typeof parser2>, string>>,
-  Expect<Equal<GetParserResult<typeof parser3>, boolean>>,
+  Expect<Equal<GetParserResult<typeof parser3>, boolean>>
 ];

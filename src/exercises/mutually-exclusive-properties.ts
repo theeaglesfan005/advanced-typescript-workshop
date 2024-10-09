@@ -1,8 +1,7 @@
+// difficulty: medium
+// tags: mapped-types, index-accessed
+
 // sources: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/06-challenges/38-mutually-exclusive-properties.solution.ts
-
-// Medium
-
-// Mapped Types, Index Access Types
 
 import { Equal, Expect } from "type-testing";
 
@@ -32,5 +31,5 @@ type tests = [
           username: string;
         }
     >
-  >,
+  >
 ];

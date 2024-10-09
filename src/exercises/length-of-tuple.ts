@@ -1,3 +1,6 @@
+// difficulty: easy
+// tags: conditional-types, index-accessed, generics-with-constraints, infer, learning-arrays, learning-generics
+
 import { Equal, Expect } from "type-testing";
 
 // TAGS: easy, array, generics

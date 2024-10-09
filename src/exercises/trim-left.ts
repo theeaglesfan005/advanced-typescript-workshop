@@ -1,3 +1,6 @@
+// difficulty: medium
+// tags: recursion, conditional-types, infer, template-literals, distribution
+
 import { Equal, Expect } from "type-testing";
 
 // TAGS: medium, conditional-types, generics, template-literal-types, recursive

@@ -1,7 +1,16 @@
+// difficulty: extreme
+// tags: learning-arrays, generics-with-constraints, index-accessed, recursion, conditional-types, infer, distribution
+
 import { Equal, Expect } from "type-testing";
 // https://github.com/type-challenges/type-challenges/blob/main/questions/05360-medium-unique/README.md
 
 // TAGS: hard, conditional types, recursion, index accessed types, arrays, generics with constraint
+
+// type Includes<T, U> = U extends [infer F, ...infer Rest]
+//   ? Equal<F, T> extends true
+//     ? true
+//     : Includes<T, Rest>
+//   : false;
 
 /**
  * Hint!

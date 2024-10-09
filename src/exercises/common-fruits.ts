@@ -1,10 +1,5 @@
-// Easy
-
-// Utility, Intersections
-
-type Prettify<T> = {
-    [K in keyof T]: T[K];
-} & {};
+// difficulty: easy
+// tags: utility-types
 
 import { Expect, Equal } from "type-testing";
 

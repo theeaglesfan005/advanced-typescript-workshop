@@ -1,8 +1,7 @@
+// difficulty: medium
+// tags: mapped-types, conditional-types, index-accessed, key-remapping, infer, distribution
+
 // source: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/06-challenges/39-discriminated-union-with-unique-values-to-object.solution.ts
-
-// Medium
-
-// Mapped Types, Conditional Types
 
 import { Equal, Expect } from "type-testing";
 
@@ -36,5 +35,5 @@ type cases = [
         "/admin/users": never;
       }
     >
-  >,
+  >
 ];
