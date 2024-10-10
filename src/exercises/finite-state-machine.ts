@@ -18,16 +18,14 @@ interface FSMConfig<TState extends string> {
   >;
 }
 
-export const makeFiniteStateMachine = <TState extends string>(
-  config: FSMConfig<TState>,
-) => config;
+export const makeFiniteStateMachine = <TState extends string>(config: FSMConfig<TState>) => config;
 
 const config = makeFiniteStateMachine({
-  initial: "a",
+  initial: 'a',
   states: {
     a: {
       onEntry: () => {
-        console.log("a");
+        console.log('a');
       },
     },
     // b should be allowed to be specified!
@@ -38,7 +36,7 @@ const config = makeFiniteStateMachine({
 const config2 = makeFiniteStateMachine({
   // c should not be allowed! It doesn't exist on the states below
   // @ts-expect-error
-  initial: "c",
+  initial: 'c',
   states: {
     a: {},
     // b should be allowed to be specified!

@@ -3,7 +3,7 @@
 
 // sources: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/06-challenges/38-mutually-exclusive-properties.solution.ts
 
-import { Equal, Expect } from "type-testing";
+import { Equal, Expect } from 'type-testing';
 
 interface Attributes {
   id: string;

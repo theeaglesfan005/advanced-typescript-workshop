@@ -26,11 +26,11 @@ interface Cat {
 
 // // Solution
 type CRUD<T extends { id: unknown }> = {
-  getOne: (id: T["id"]) => Promise<T>;
+  getOne: (id: T['id']) => Promise<T>;
   getAll: () => Promise<Array<T>>;
-  create: (partialEntity: Omit<T, "id">) => Promise<T>;
-  update: (id: T["id"], updated: Partial<Omit<T, "id">>) => Promise<T>;
-  delete: (id: T["id"]) => Promise<void>;
+  create: (partialEntity: Omit<T, 'id'>) => Promise<T>;
+  update: (id: T['id'], updated: Partial<Omit<T, 'id'>>) => Promise<T>;
+  delete: (id: T['id']) => Promise<void>;
 };
 
 const getCRUD = <T extends { id: unknown }>() => {

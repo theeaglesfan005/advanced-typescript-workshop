@@ -1,7 +1,7 @@
 // difficulty: hard
 // tags:  index-accessed, conditional-types, learning-arrays, recursion
 
-import { Equal, Expect } from "type-testing";
+import { Equal, Expect } from 'type-testing';
 
 // Create a type Path that represents validates a possible path of a tree under the form of an array.
 

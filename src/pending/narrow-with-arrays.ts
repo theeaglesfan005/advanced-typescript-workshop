@@ -5,7 +5,7 @@
 
 // TODO:
 
-import { Equal, Expect } from "type-testing";
+import { Equal, Expect } from 'type-testing';
 
 interface Fruit {
   name: string;
@@ -20,25 +20,20 @@ declare var wrapFruit1: WrapFruit;
 
 const fruits1 = wrapFruit1([
   {
-    name: "apple",
+    name: 'apple',
     price: 1,
   },
   {
-    name: "banana",
+    name: 'banana',
     price: 2,
   },
 ]);
 
-fruits1.getFruit("apple"); // should be {name: 'apple', price: 1}
+fruits1.getFruit('apple'); // should be {name: 'apple', price: 1}
 
-export const wrapFruit = <const TFruits extends readonly Fruit[]>(
-  fruits: TFruits,
-) => {
-  const getFruit = <TName extends TFruits[number]["name"]>(name: TName) => {
-    return fruits.find((fruit) => fruit.name === name) as Extract<
-      TFruits[number],
-      { name: TName }
-    >;
+export const wrapFruit = <const TFruits extends readonly Fruit[]>(fruits: TFruits) => {
+  const getFruit = <TName extends TFruits[number]['name']>(name: TName) => {
+    return fruits.find((fruit) => fruit.name === name) as Extract<TFruits[number], { name: TName }>;
   };
 
   return {
@@ -48,21 +43,21 @@ export const wrapFruit = <const TFruits extends readonly Fruit[]>(
 
 const fruits = wrapFruit([
   {
-    name: "apple",
+    name: 'apple',
     price: 1,
   },
   {
-    name: "banana",
+    name: 'banana',
     price: 2,
   },
 ]);
 
-const banana = fruits.getFruit("banana");
-const apple = fruits.getFruit("apple");
+const banana = fruits.getFruit('banana');
+const apple = fruits.getFruit('apple');
 // @ts-expect-error
-const notAllowed = fruits.getFruit("not-allowed");
+const notAllowed = fruits.getFruit('not-allowed');
 
 type cases = [
-  Expect<Equal<typeof apple, { readonly name: "apple"; readonly price: 1 }>>,
-  Expect<Equal<typeof banana, { readonly name: "banana"; readonly price: 2 }>>,
+  Expect<Equal<typeof apple, { readonly name: 'apple'; readonly price: 1 }>>,
+  Expect<Equal<typeof banana, { readonly name: 'banana'; readonly price: 2 }>>,
 ];

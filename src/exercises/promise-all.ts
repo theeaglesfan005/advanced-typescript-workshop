@@ -9,7 +9,7 @@
 
 // Hint: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types
 
-import { Expect, Equal } from "type-testing";
+import { Expect, Equal } from 'type-testing';
 
 declare function promiseAll<T extends any[]>(
   values: readonly [...T],

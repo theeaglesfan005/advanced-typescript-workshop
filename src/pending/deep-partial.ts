@@ -1,8 +1,8 @@
 // difficulty: hard
 // tags: conditional-types, mapped-types, utility-types, index-accessed, recursion
 
-import { Equal, Expect } from "type-testing";
-import { Prettify } from "../prettify";
+import { Equal, Expect } from 'type-testing';
+import { Prettify } from '../prettify';
 
 // TODO: figure out solution
 // TODO: break cases into smaller chunks
@@ -16,14 +16,14 @@ type X1 = {
       g: {
         h: {
           i: true;
-          j: "string";
+          j: 'string';
         };
-        k: "hello";
+        k: 'hello';
       };
       l: [
-        "hi",
+        'hi',
         {
-          m: ["hey"];
+          m: ['hey'];
         },
       ];
     };
@@ -46,21 +46,18 @@ type Result = {
       g?: {
         h?: {
           i?: true;
-          j?: "string";
+          j?: 'string';
         };
-        k?: "hello";
+        k?: 'hello';
       };
       l?: [
-        "hi",
+        'hi',
         {
-          m?: ["hey"];
+          m?: ['hey'];
         },
       ];
     };
   };
 };
 
-type cases = [
-  Expect<Equal<DeepPartial<{ moo: "cow" }>, { moo?: "cow" }>>,
-  Expect<Equal<DeepPartial<X1>, Result>>,
-];
+type cases = [Expect<Equal<DeepPartial<{ moo: 'cow' }>, { moo?: 'cow' }>>, Expect<Equal<DeepPartial<X1>, Result>>];

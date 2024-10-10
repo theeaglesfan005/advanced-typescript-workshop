@@ -5,21 +5,18 @@
 
 type Events =
   | {
-      type: "click";
+      type: 'click';
       clicks: number;
     }
-  | { type: "error"; error: Error }
-  | { type: "moo"; moo: "cow" };
+  | { type: 'error'; error: Error }
+  | { type: 'moo'; moo: 'cow' };
 
 // declare function emit<T extends Events, K extends T['type']>(type: K, payload: Omit<Extract<{type:K}, K>, 'type'>): void
-declare function emit<K extends Events["type"]>(
-  type: K,
-  payload: Omit<Extract<Events, { type: K }>, "type">,
-): void;
+declare function emit<K extends Events['type']>(type: K, payload: Omit<Extract<Events, { type: K }>, 'type'>): void;
 
-emit("click", { clicks: 42 });
-emit("error", { error: new Error("") });
-emit("moo", { moo: "cow" });
+emit('click', { clicks: 42 });
+emit('error', { error: new Error('') });
+emit('moo', { moo: 'cow' });
 
 // @ts-expect-error
-emit("moo", { moo: "cow", error: new Error("") });
+emit('moo', { moo: 'cow', error: new Error('') });

@@ -1,13 +1,13 @@
 // difficulty: easy
 // tags: utility-types
 
-import { Equal, Expect } from "type-testing";
+import { Equal, Expect } from 'type-testing';
 
 interface Developer {
   name: string;
   skills: string[];
   projects: string[];
-  level: "junior" | "mid" | "senior";
+  level: 'junior' | 'mid' | 'senior';
   availability: number;
 }
 
@@ -15,7 +15,7 @@ interface Manager {
   name: string;
   teamSize: number;
   departments: string[];
-  level: "assistant" | "associate" | "senior";
+  level: 'assistant' | 'associate' | 'senior';
   availability: string;
 }
 
@@ -32,13 +32,7 @@ type cases = [
       TeamMember,
       {
         name: string;
-        level:
-          | "junior"
-          | "mid"
-          | "senior"
-          | "assistant"
-          | "associate"
-          | "senior";
+        level: 'junior' | 'mid' | 'senior' | 'assistant' | 'associate' | 'senior';
         availability: string | number;
       }
     >
