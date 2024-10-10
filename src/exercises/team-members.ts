@@ -32,9 +32,15 @@ type cases = [
       TeamMember,
       {
         name: string;
-        level: "junior" | "mid" | "senior" | "assistant" | "associate" | "senior";
+        level:
+          | "junior"
+          | "mid"
+          | "senior"
+          | "assistant"
+          | "associate"
+          | "senior";
         availability: string | number;
       }
     >
-  >
+  >,
 ];

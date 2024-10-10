@@ -7,18 +7,24 @@ import { Expect, Equal } from "type-testing";
 
 //  Conditional Types, Recursion
 
-type FlipArray<T extends any[]> = T extends [infer Head, ...infer Rest] ? [...FlipArray<Rest>, Head] : [];
-type FlipArguments<T extends (...args: any) => any> = (...args: [...FlipArray<Parameters<T>>]) => ReturnType<T>;
+type FlipArray<T extends any[]> = T extends [infer Head, ...infer Rest]
+  ? [...FlipArray<Rest>, Head]
+  : [];
+type FlipArguments<T extends (...args: any) => any> = (
+  ...args: [...FlipArray<Parameters<T>>]
+) => ReturnType<T>;
 
 type cases = [
   Expect<Equal<FlipArguments<() => boolean>, () => boolean>>,
-  Expect<Equal<FlipArguments<(foo: string) => number>, (foo: string) => number>>,
+  Expect<
+    Equal<FlipArguments<(foo: string) => number>, (foo: string) => number>
+  >,
   Expect<
     Equal<
       FlipArguments<(arg0: string, arg1: number, arg2: boolean) => void>,
       (arg0: boolean, arg1: number, arg2: string) => void
     >
-  >
+  >,
 ];
 
 type errors = [
@@ -29,5 +35,5 @@ type errors = [
   // @ts-expect-error
   FlipArguments<["apple", "banana", 100, { a: 1 }]>,
   // @ts-expect-error
-  FlipArguments<null | undefined>
+  FlipArguments<null | undefined>,
 ];

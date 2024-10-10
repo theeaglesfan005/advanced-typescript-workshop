@@ -15,7 +15,9 @@ interface MyInstance {
   numberOfCows: number;
 }
 
-type EventTypes = Parameters<MyInstance[Extract<keyof MyInstance, `on${string}`>]>[0];
+type EventTypes = Parameters<
+  MyInstance[Extract<keyof MyInstance, `on${string}`>]
+>[0];
 
 interface FakeProps {
   id: string;

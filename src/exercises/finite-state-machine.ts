@@ -18,7 +18,9 @@ interface FSMConfig<TState extends string> {
   >;
 }
 
-export const makeFiniteStateMachine = <TState extends string>(config: FSMConfig<TState>) => config;
+export const makeFiniteStateMachine = <TState extends string>(
+  config: FSMConfig<TState>,
+) => config;
 
 const config = makeFiniteStateMachine({
   initial: "a",

@@ -24,7 +24,7 @@ type X1 = {
         "hi",
         {
           m: ["hey"];
-        }
+        },
       ];
     };
   };
@@ -54,10 +54,13 @@ type Result = {
         "hi",
         {
           m?: ["hey"];
-        }
+        },
       ];
     };
   };
 };
 
-type cases = [Expect<Equal<DeepPartial<{ moo: "cow" }>, { moo?: "cow" }>>, Expect<Equal<DeepPartial<X1>, Result>>];
+type cases = [
+  Expect<Equal<DeepPartial<{ moo: "cow" }>, { moo?: "cow" }>>,
+  Expect<Equal<DeepPartial<X1>, Result>>,
+];

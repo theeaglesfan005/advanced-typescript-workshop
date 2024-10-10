@@ -2,12 +2,9 @@
 
 // Omit, Pick, Exclude, Extract
 
-https://typehero.dev/challenge/exclude/solutions/148
+// https://typehero.dev/challenge/exclude/solutions/148
 
 //
-
-
-
 
 // Hello
 // Hi!

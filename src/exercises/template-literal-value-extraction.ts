@@ -14,5 +14,5 @@ type tests = [
   Expect<Equal<GetSurname<"Jimi Hendrix">, "Hendrix">>,
   Expect<Equal<GetSurname<"Eric Clapton">, "Clapton">>,
   Expect<Equal<GetSurname<"John Mayer">, "Mayer">>,
-  Expect<Equal<GetSurname<"BB King">, "King">>
+  Expect<Equal<GetSurname<"BB King">, "King">>,
 ];

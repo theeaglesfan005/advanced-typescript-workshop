@@ -12,7 +12,7 @@
 import { Expect, Equal } from "type-testing";
 
 declare function promiseAll<T extends any[]>(
-  values: readonly [...T]
+  values: readonly [...T],
 ): Promise<{
   [P in keyof T]: Awaited<T[P]>;
   //   [P in keyof T]: T[P] extends Promise<infer K> ? K : T[P]// <-- doesn't work since the last test case requires unwrapping nested promises
@@ -27,5 +27,5 @@ type cases = [
   Expect<Equal<typeof promiseAllTest1, Promise<[1, 2, 3]>>>,
   Expect<Equal<typeof promiseAllTest2, Promise<[1, 2, number]>>>,
   Expect<Equal<typeof promiseAllTest3, Promise<[number, number, number]>>>,
-  Expect<Equal<typeof promiseAllTest4, Promise<number[]>>>
+  Expect<Equal<typeof promiseAllTest4, Promise<number[]>>>,
 ];

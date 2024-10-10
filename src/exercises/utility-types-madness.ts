@@ -19,7 +19,13 @@ type MainSolution<T extends Input> = Pick<T, "hello">;
 type MyType = Extract<
   Exclude<
     NoInfer<
-      ReturnType<() => Parameters<(arg: NonNullable<Omit<Required<Partial<MainSolution<Input>>>, "">>) => void>[0]>
+      ReturnType<
+        () => Parameters<
+          (
+            arg: NonNullable<Omit<Required<Partial<MainSolution<Input>>>, "">>,
+          ) => void
+        >[0]
+      >
     >,
     { moo: "cow" }
   >,

@@ -35,5 +35,5 @@ type cases = [
         "/admin/users": never;
       }
     >
-  >
+  >,
 ];

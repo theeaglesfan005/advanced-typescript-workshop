@@ -17,11 +17,12 @@ declare const example: {
   };
 };
 
-type Path<T> = T extends Record<PropertyKey, unknown>
-  ? {
-      [P in keyof T]: [P, ...Path<T[P]>] | [P];
-    }[keyof T]
-  : never;
+type Path<T> =
+  T extends Record<PropertyKey, unknown>
+    ? {
+        [P in keyof T]: [P, ...Path<T[P]>] | [P];
+      }[keyof T]
+    : never;
 
 type A = Path<typeof example>;
 
