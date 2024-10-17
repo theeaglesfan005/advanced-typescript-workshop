@@ -1,8 +1,14 @@
+import { Equal, Expect } from 'type-testing';
+
+// source: https://github.com/type-challenges/type-challenges/blob/main/questions/05360-medium-unique/README.md
+
 // difficulty: hard
 // tags: learning-arrays, generics-with-constraints, index-accessed, recursion, conditional-types, infer, distribution
 
-import { Equal, Expect } from 'type-testing';
-// https://github.com/type-challenges/type-challenges/blob/main/questions/05360-medium-unique/README.md
+/**
+ * Create a generic type that removes any duplicate numbers or strings in an
+ * array.
+ */
 
 type Unique<TInput extends any[], TOutput extends any[] = []> = TInput extends []
   ? TOutput

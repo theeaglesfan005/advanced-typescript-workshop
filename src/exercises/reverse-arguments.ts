@@ -1,11 +1,20 @@
-// difficulty: hard
-// tags: utility-types, learning-arrays, conditional-types, infer, recursion, generics-with-constraints
+import { Expect, Equal } from 'type-testing';
 
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/03196-medium-flip-arguments/README.md
 
-import { Expect, Equal } from 'type-testing';
+// difficulty: hard
+// tags: utility-types, learning-arrays, conditional-types, infer, recursion, generics-with-constraints
 
-//  Conditional Types, Recursion
+/**
+ * Implement the type version of lodash's _.flip.
+ *
+ * Type FlipArguments<T> requires function type T and returns a new function type which has the same return type of T but reversed parameters.
+ * @example
+ * ```
+ * type Flipped = FlipArguments<(arg0: string, arg1: number, arg2: boolean) => void>
+ * //   ^? (arg0: boolean, arg1: number, arg2: string) => void
+ * ```
+ */
 
 type FlipArray<T extends any[]> = T extends [infer Head, ...infer Rest] ? [...FlipArray<Rest>, Head] : [];
 type FlipArguments<T extends (...args: any) => any> = (...args: [...FlipArray<Parameters<T>>]) => ReturnType<T>;
@@ -13,7 +22,12 @@ type FlipArguments<T extends (...args: any) => any> = (...args: [...FlipArray<Pa
 type cases = [
   Expect<Equal<FlipArguments<() => boolean>, () => boolean>>,
   Expect<Equal<FlipArguments<(foo: string) => number>, (foo: string) => number>>,
-  Expect<Equal<FlipArguments<(arg0: string, arg1: number, arg2: boolean) => void>, (arg0: boolean, arg1: number, arg2: string) => void>>,
+  Expect<
+    Equal<
+      FlipArguments<(arg0: string, arg1: number, arg2: boolean) => void>,
+      (arg0: boolean, arg1: number, arg2: string) => void
+    >
+  >,
 ];
 
 type errors = [

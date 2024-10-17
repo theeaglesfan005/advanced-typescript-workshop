@@ -1,12 +1,14 @@
+import { Equal, Expect } from 'type-testing';
+
+// source: https://github.com/type-challenges/type-challenges/blob/main/questions/00106-medium-trimleft/README.md
+
 // difficulty: medium
 // tags: recursion, conditional-types, infer, template-literals, distribution
 
-import { Equal, Expect } from 'type-testing';
-
-// TAGS: medium, conditional-types, generics, template-literal-types, recursive
-// https://github.com/type-challenges/type-challenges/blob/main/questions/00106-medium-trimleft/README.md
-
-// Implement TrimLeft which takes an exact string type and returns a new string with the whitespace beginning removed.
+/**
+ * Implement TrimLeft which takes an exact string type and returns a new string
+ * with the whitespace beginning removed.
+ */
 
 type Space = ' ' | '\t' | '\n';
 

@@ -4,7 +4,9 @@
 // source: https://github.com/total-typescript/advanced-patterns-workshop/blob/main/src/06-identity-functions/29-finite-state-machine.problem.ts
 
 /**
- * This is a oneliner!
+ * Update the types below so that there's no type errors.
+ *
+ * Hint: This is a one-liner fix!
  */
 
 interface FSMConfig<TState extends string> {

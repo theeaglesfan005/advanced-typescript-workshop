@@ -1,9 +1,14 @@
-// difficulty: medium
-// tags: mapped-types, index-accessed
+import { Equal, Expect } from 'type-testing';
 
 // sources: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/06-challenges/38-mutually-exclusive-properties.solution.ts
 
-import { Equal, Expect } from 'type-testing';
+// difficulty: medium
+// tags: mapped-types, index-accessed
+
+/**
+ * Create a generic that unions an separate object type for every property of a
+ * single object.
+ */
 
 interface Attributes {
   id: string;

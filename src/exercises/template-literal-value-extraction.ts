@@ -1,11 +1,14 @@
-// difficulty: easy
-// tags: conditional-types, infer, template-literals
+import { Equal, Expect } from 'type-testing';
 
 // source: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/04-conditional-types-and-infer/25-template-literal-value-extraction.solution.1.ts
 
-// TAGS: easy, template literal types, conditional types, infer
+// difficulty: easy
+// tags: conditional-types, infer, template-literals
 
-import { Equal, Expect } from 'type-testing';
+/**
+ * Create a generic type that returns the surname of a string assuming there's
+ * only a given name and surname.
+ */
 
 type GetSurname<T> = T extends `${string} ${infer Last}` ? Last : never;
 

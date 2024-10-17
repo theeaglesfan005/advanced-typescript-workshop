@@ -1,21 +1,22 @@
+import { Equal, Expect } from 'type-testing';
+
+// source: https://github.com/type-challenges/type-challenges/blob/main/questions/05360-medium-unique/README.md
+
 // difficulty: extreme
 // tags: learning-arrays, generics-with-constraints, index-accessed, recursion, conditional-types, infer, distribution
 
-import { Equal, Expect } from 'type-testing';
-// https://github.com/type-challenges/type-challenges/blob/main/questions/05360-medium-unique/README.md
-
-// TAGS: hard, conditional types, recursion, index accessed types, arrays, generics with constraint
-
-// type Includes<T, U> = U extends [infer F, ...infer Rest]
-//   ? Equal<F, T> extends true
-//     ? true
-//     : Includes<T, Rest>
-//   : false;
-
 /**
- * Hint!
- * you need to use Equal
+ * Create a generic type that removes any duplicate numbers, strings, unknowns,
+ * any's, or nevers in an array.
+ *
+ * Hint: you need to use `Equal` from `type-testing` to check for equalities.
  */
+
+type Includes<T, U> = U extends [infer F, ...infer Rest]
+  ? Equal<F, T> extends true
+    ? true
+    : Includes<T, Rest>
+  : false;
 
 type Unique<TInput extends any[], TOutput extends any[] = []> = TInput extends []
   ? TOutput
@@ -31,11 +32,4 @@ type cases = [
   Expect<Equal<Unique<[1, 'a', 2, 'b', 2, 'a']>, [1, 'a', 2, 'b']>>,
   Expect<Equal<Unique<[string, number, 1, 'a', 1, string, 2, 'b', 2, number]>, [string, number, 1, 'a', 2, 'b']>>,
   Expect<Equal<Unique<[unknown, unknown, any, any, never, never]>, [unknown, any, never]>>,
-];
-
-type includeCases = [
-  Expect<Equal<Includes<[], 'a'>, false>>,
-  Expect<Equal<Includes<'a', ['a']>, true>>,
-  Expect<Equal<Includes<['b', 'c'], 'a'>, false>>,
-  Expect<Equal<Includes<'a', ['b', 'c', 'a']>, true>>,
 ];

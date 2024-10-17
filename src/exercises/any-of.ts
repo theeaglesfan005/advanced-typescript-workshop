@@ -1,14 +1,19 @@
+import { Expect, Equal } from 'type-testing';
+
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/00268-easy-if/test-cases.ts
 
 // difficulty: medium
 // tags: conditional-types, index-accessed
 
-import { Expect, Equal } from 'type-testing';
-
 /**
- * Implement Python liked any function in the type system. A type takes the Array and returns true if any element of the Array is true. If the Array is empty, return false.
+ * Implement Python liked any function in the type system. A type takes the
+ * Array and returns true if any element of the Array is true. If the Array is
+ * empty, return false.
  */
-type AnyOf<T extends any[]> = T[number] extends 0 | '' | false | [] | { [key: string]: never } | null | undefined ? false : true;
+
+type AnyOf<T extends any[]> = T[number] extends 0 | '' | false | [] | { [key: string]: never } | null | undefined
+  ? false
+  : true;
 
 type cases = [
   Expect<Equal<AnyOf<[1, 'test', true, [1], { name: 'test' }, { 1: 'test' }]>, true>>,

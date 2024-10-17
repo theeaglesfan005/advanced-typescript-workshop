@@ -1,7 +1,11 @@
+import { Expect, Equal } from 'type-testing';
+
 // difficulty: easy
 // tags: utility-types
 
-import { Expect, Equal } from 'type-testing';
+/**
+ * Find the common fruit string literals between `Fruit` and `Citrus`.
+ */
 
 type Fruit = 'apple' | 'banana' | 'orange';
 type Citrus = 'orange' | 'lemon';

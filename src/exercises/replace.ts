@@ -1,9 +1,14 @@
-// difficulty: hard
-// tags: generics-with-constraints, conditional-types, template-literals, infer
+import { Expect, Equal } from 'type-testing';
 
 // source: https://typehero.dev/challenge/replace/solutions/287
 
-import { Expect, Equal } from 'type-testing';
+// difficulty: hard
+// tags: generics-with-constraints, conditional-types, template-literals, infer
+
+/**
+ * Implement Replace<S, From, To> which replace the string From with To once in
+ * the given string S.
+ */
 
 type Replace<S extends string, From extends string, To extends string> = From extends ''
   ? S

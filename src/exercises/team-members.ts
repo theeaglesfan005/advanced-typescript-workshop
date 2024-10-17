@@ -1,7 +1,12 @@
+import { Equal, Expect } from 'type-testing';
+
 // difficulty: easy
 // tags: utility-types
 
-import { Equal, Expect } from 'type-testing';
+/**
+ * Define a type TeamMember that includes the common properties between
+ * Developer and Manager, with their types from each interface
+ */
 
 interface Developer {
   name: string;
@@ -19,12 +24,7 @@ interface Manager {
   availability: string;
 }
 
-/**
- * Define a type TeamMember that includes the common properties between Developer and Manager, with their types from each interface
- */
-
 type TeamMember = Pick<Developer | Manager, keyof Manager & keyof Developer>;
-//   ^?
 
 type cases = [
   Expect<

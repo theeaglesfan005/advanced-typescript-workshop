@@ -23,8 +23,50 @@ const TAGS = [
   'todo', // TODO: remove
 ] as const;
 
+const TITLE_CASE_OVERRIDES = {
+  To: 'to',
+  By: 'by',
+  Of: 'of',
+  With: 'with',
+  In: 'in',
+  Bem: 'BEM',
+  Css: 'CSS',
+} as const;
+
+const TITLE_CASE_REPLACES = {
+  'Starts with': 'StartsWith',
+  'Non Empty': 'Non-empty',
+  'Any of': 'Any Of',
+} as const;
+
 type Difficulty = (typeof DIFFICULTIES)[number];
 type Tag = (typeof TAGS)[number];
+
+const getExerciseName = (filepath: string) => {
+  // Remove path and file extension
+  const filename = (filepath.split('/').at(-1) as string).split('.')[0];
+
+  let titleCaseFileName = filename
+    .toLowerCase()
+    .replace(/(?:^|[\s-/])\w/g, function (match) {
+      return match.toUpperCase();
+    })
+    .split('-')
+    .map((part) => TITLE_CASE_OVERRIDES[part as keyof typeof TITLE_CASE_OVERRIDES] ?? part)
+    .join(' ');
+
+  // TODO: Non Empty
+  Object.entries(TITLE_CASE_REPLACES).forEach(([original, replace]) => {
+    titleCaseFileName = titleCaseFileName.replaceAll(original, replace);
+  });
+
+  if (titleCaseFileName === 'if') {
+    return 'If';
+  }
+
+  // Remove file extension
+  return titleCaseFileName;
+};
 
 const getUrl = (filepath: string) => {
   return join(ROOT, filepath);
@@ -81,6 +123,7 @@ const main = async () => {
             url: getUrl(filepath),
             difficulty: getDifficulty(file),
             tags: getTags(file),
+            exercise: getExerciseName(filepath),
           };
         } catch (e) {
           console.error(`Unexpected issue with file at ${filepath}`);

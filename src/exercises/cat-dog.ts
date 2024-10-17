@@ -2,7 +2,8 @@
 // tags: learning-generics, utility-types, generics-with-constraints
 
 /**
- * Update the CRUD type to support any instance type that has `id` property such as `Cat`.
+ * Update the CRUD<T> type to support any instance type that has `id` property
+ * such as `Cat` or `Dog`.
  */
 
 interface Dog {

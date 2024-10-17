@@ -1,15 +1,17 @@
-// difficulty: medium
-// tags: utility-types, learning-generics, generics-with-constraints, mapped-types, learning-arrays
+import { Expect, Equal } from 'type-testing';
 
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/00020-medium-promise-all/README.md
 
-// Medium
+// difficulty: medium
+// tags: utility-types, learning-generics, generics-with-constraints, mapped-types, learning-arrays
 
-// Utility Types, Map Types
-
-// Hint: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types
-
-import { Expect, Equal } from 'type-testing';
+/**
+ * Type the function `PromiseAll` that accepts an array of PromiseLike objects,
+ * the returning value should be Promise<T> where T is the resolved result
+ * array.
+ *
+ * Hint: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types
+ */
 
 declare function promiseAll<T extends any[]>(
   values: readonly [...T],
