@@ -1,7 +1,5 @@
 import { Expect, Equal } from 'type-testing';
 
-// sources: https://github.com/type-challenges/type-challenges/blob/main/questions/00147-hard-c-printf-parser/test-cases.ts
-
 // difficulty: hard
 // tags: conditional-types, index-accessed, template-literals, infer, recursion
 
@@ -14,8 +12,8 @@ import { Expect, Equal } from 'type-testing';
  * printf("The result is %d.", 42);
  * ```
  *
- * Create a type that parses the input string and extracts the format
- * placeholders like %d and %f. For example, if the input string is
+ * Update `ParsePrintFormat` so that it parses the input string and extracts the
+ * format placeholders like %d and %f. For example, if the input string is
  * "The result is %d.", the parsed result is a tuple ['dec'].
  */
 
@@ -29,11 +27,7 @@ type ControlsMap = {
   p: 'pointer';
 };
 
-type ParsePrintFormat<S extends string, R extends string[] = []> = S extends `${string}%${infer Control}${infer Rest}`
-  ? Control extends keyof ControlsMap
-    ? ParsePrintFormat<Rest, [...R, ControlsMap[Control]]>
-    : ParsePrintFormat<Rest, R>
-  : R;
+type ParsePrintFormat<S, R> = unknown;
 
 type cases = [
   Expect<Equal<ParsePrintFormat<''>, []>>,

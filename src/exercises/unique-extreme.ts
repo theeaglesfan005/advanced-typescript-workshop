@@ -1,30 +1,16 @@
 import { Equal, Expect } from 'type-testing';
 
-// source: https://github.com/type-challenges/type-challenges/blob/main/questions/05360-medium-unique/README.md
-
 // difficulty: extreme
 // tags: learning-arrays, generics-with-constraints, index-accessed, recursion, conditional-types, infer, distribution
 
 /**
- * Create a generic type that removes any duplicate numbers, strings, unknowns,
+ * Update `Unique` so that it removes any duplicate numbers, strings, unknowns,
  * any's, or nevers in an array.
  *
  * Hint: you need to use `Equal` from `type-testing` to check for equalities.
  */
 
-type Includes<T, U> = U extends [infer F, ...infer Rest]
-  ? Equal<F, T> extends true
-    ? true
-    : Includes<T, Rest>
-  : false;
-
-type Unique<TInput extends any[], TOutput extends any[] = []> = TInput extends []
-  ? TOutput
-  : TInput extends [infer Head, ...infer Rest]
-    ? Includes<Head, TOutput> extends true
-      ? Unique<Rest, TOutput>
-      : Unique<Rest, [...TOutput, Head]>
-    : never;
+type Unique<TInput, TOutput> = unknown;
 
 type cases = [
   Expect<Equal<Unique<[1, 1, 2, 2, 3, 3]>, [1, 2, 3]>>,

@@ -1,7 +1,5 @@
 import { Expect, Equal } from 'type-testing';
 
-// source: https://typehero.dev/challenge/startswith/solutions/2248
-
 // difficulty: easy
 // tags: conditional-types, generics-with-constraints, template-literals
 
@@ -17,7 +15,7 @@ import { Expect, Equal } from 'type-testing';
  * ```
  */
 
-type StartsWith<T extends string, U extends string> = T extends `${U}${string}` ? true : false;
+type StartsWith<T, U> = unknown;
 
 type cases = [
   Expect<Equal<StartsWith<'abc', 'ac'>, false>>,

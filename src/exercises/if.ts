@@ -1,7 +1,5 @@
 import { Expect, Equal } from 'type-testing';
 
-// source: https://github.com/type-challenges/type-challenges/tree/main/questions/00268-easy-if
-
 // difficulty: easy
 // tags: conditional-types, distribution, generics-with-constraints
 
@@ -11,7 +9,7 @@ import { Expect, Equal } from 'type-testing';
  * F can be any type.
  */
 
-type If<C extends boolean, T, F> = C extends true ? T : F;
+type If<C, T, F> = unknown;
 
 type cases = [
   Expect<Equal<If<true, 'a', 'b'>, 'a'>>,
@@ -21,8 +19,3 @@ type cases = [
 
 // @ts-expect-error
 type error = If<null, 'a', 'b'>;
-
-type Length2<T extends any[]> = T extends { length: infer L } ? L : never;
-type Length3<T extends { length: unknown }> = T['length'];
-
-type test = Length3<{ length: 5 }>;

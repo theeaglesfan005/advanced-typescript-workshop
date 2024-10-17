@@ -4,9 +4,11 @@ import { Equal, Expect, NotEqual } from 'type-testing';
 // tags: index-accessed, conditional-types, learning-arrays, recursion
 
 /**
- * Create a type Path that represents validates a possible path of a tree under
- * the form of an array.
+ * Update the type `Path` so that it represents validates a possible path of a
+ * tree under the form of an array.
  */
+
+type Path<T> = unknown;
 
 type Example = {
   foo: {
@@ -19,13 +21,6 @@ type Example = {
     };
   };
 };
-
-type Path<T> =
-  T extends Record<PropertyKey, unknown>
-    ? {
-        [P in keyof T]: [P, ...Path<T[P]>] | [P];
-      }[keyof T]
-    : never;
 
 type cases = [
   Expect<Equal<Path<Example['foo']['bar']>, ['a']>>,

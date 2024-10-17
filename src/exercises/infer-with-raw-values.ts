@@ -1,15 +1,13 @@
 import { Equal, Expect } from 'type-testing';
 
-// source: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/04-conditional-types-and-infer/23-infer-with-raw-values.solution.1.ts
-
 // difficulty: easy
 // tags: conditional-types, index-accessed, generics-with-constraints
 
 /**
- * Create a generic that returns the type of the `data` property.
+ * Update `GetDataValue` so that it returns the type of the `data` property.
  */
 
-type GetDataValue<T> = T extends { data: any } ? T['data'] : never;
+type GetDataValue<T> = unknown;
 
 type cases = [
   Expect<Equal<GetDataValue<{ data: 'hello' }>, 'hello'>>,

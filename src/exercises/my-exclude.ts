@@ -1,7 +1,5 @@
 import { Expect, Equal } from 'type-testing';
 
-// source: https://typehero.dev/challenge/exclude/solutions/148
-
 // difficulty: easy
 // tags: utility-types, conditional-types, distribution
 
@@ -11,7 +9,7 @@ import { Expect, Equal } from 'type-testing';
  * Exclude from T those types that are assignable to U
  */
 
-type MyExclude<T, U> = T extends U ? never : T;
+type MyExclude<T, U> = unknown;
 
 type cases = [
   Expect<Equal<MyExclude<'a' | 'b' | 'c', 'a'>, 'b' | 'c'>>,

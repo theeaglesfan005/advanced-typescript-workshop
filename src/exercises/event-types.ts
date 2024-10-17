@@ -12,7 +12,7 @@ type Events =
   | { type: 'update'; updates: string; timestamp: Date }
   | { type: 'loaded'; success: boolean };
 
-declare function emit<K extends Events['type']>(type: K, payload: Omit<Extract<Events, { type: K }>, 'type'>): void;
+declare function emit<K>(type: K, payload: unknown): void;
 
 emit('click', { clicks: 42 });
 emit('error', { error: new Error('some error') });

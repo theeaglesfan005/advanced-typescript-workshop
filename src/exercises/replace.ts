@@ -1,7 +1,5 @@
 import { Expect, Equal } from 'type-testing';
 
-// source: https://typehero.dev/challenge/replace/solutions/287
-
 // difficulty: hard
 // tags: generics-with-constraints, conditional-types, template-literals, infer
 
@@ -10,11 +8,7 @@ import { Expect, Equal } from 'type-testing';
  * the given string S.
  */
 
-type Replace<S extends string, From extends string, To extends string> = From extends ''
-  ? S
-  : S extends `${infer Left}${From}${infer Right}`
-    ? `${Left}${To}${Right}`
-    : S;
+type Replace<S, From, To> = unknown;
 
 type cases = [
   Expect<Equal<Replace<'foobar', 'bar', 'foo'>, 'foofoo'>>,

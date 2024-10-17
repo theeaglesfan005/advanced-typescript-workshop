@@ -16,22 +16,12 @@ interface Cat {
   meows: boolean;
 }
 
-// // Original
-// type CRUD<T extends { id: unknown }> = {
-//     getOne: (id: number) => Promise<{ id: number; barks: boolean }>;
-//     getAll: () => Promise<Array<{ id: number; barks: boolean }>>;
-//     create: (partialEntity: { barks: boolean }) => Promise<{ barks: boolean }>;
-//     update: (id: number, updated: { barks?: boolean }) => Promise<{ barks: boolean }>;
-//     delete: (id: number) => Promise<void>;
-// };
-
-// // Solution
 type CRUD<T extends { id: unknown }> = {
-  getOne: (id: T['id']) => Promise<T>;
-  getAll: () => Promise<Array<T>>;
-  create: (partialEntity: Omit<T, 'id'>) => Promise<T>;
-  update: (id: T['id'], updated: Partial<Omit<T, 'id'>>) => Promise<T>;
-  delete: (id: T['id']) => Promise<void>;
+  getOne: (id: number) => Promise<{ id: number; barks: boolean }>;
+  getAll: () => Promise<Array<{ id: number; barks: boolean }>>;
+  create: (partialEntity: { barks: boolean }) => Promise<{ barks: boolean }>;
+  update: (id: number, updated: { barks?: boolean }) => Promise<{ barks: boolean }>;
+  delete: (id: number) => Promise<void>;
 };
 
 const getCRUD = <T extends { id: unknown }>() => {

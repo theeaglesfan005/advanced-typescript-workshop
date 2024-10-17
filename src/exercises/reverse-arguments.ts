@@ -1,7 +1,5 @@
 import { Expect, Equal } from 'type-testing';
 
-// source: https://github.com/type-challenges/type-challenges/blob/main/questions/03196-medium-flip-arguments/README.md
-
 // difficulty: hard
 // tags: utility-types, learning-arrays, conditional-types, infer, recursion, generics-with-constraints
 
@@ -16,8 +14,7 @@ import { Expect, Equal } from 'type-testing';
  * ```
  */
 
-type FlipArray<T extends any[]> = T extends [infer Head, ...infer Rest] ? [...FlipArray<Rest>, Head] : [];
-type FlipArguments<T extends (...args: any) => any> = (...args: [...FlipArray<Parameters<T>>]) => ReturnType<T>;
+type FlipArguments<T> = unknown;
 
 type cases = [
   Expect<Equal<FlipArguments<() => boolean>, () => boolean>>,

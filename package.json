@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scrape": "ts-node scrape.ts",
+    "scrape": "ts-node scrape.ts --transpile-only",
     "format": "prettier . --write",
     "prepare": "husky"
   },

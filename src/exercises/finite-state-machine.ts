@@ -1,8 +1,6 @@
 // difficulty: easy
 // tags: utility-types
 
-// source: https://github.com/total-typescript/advanced-patterns-workshop/blob/main/src/06-identity-functions/29-finite-state-machine.problem.ts
-
 /**
  * Update the types below so that there's no type errors.
  *
@@ -10,8 +8,7 @@
  */
 
 interface FSMConfig<TState extends string> {
-  // initial: TState;
-  initial: NoInfer<TState>; // <-- solution
+  initial: TState;
   states: Record<
     TState,
     {

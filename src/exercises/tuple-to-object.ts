@@ -1,13 +1,11 @@
 import { Expect, Equal } from 'type-testing';
 
-// source: https://github.com/type-challenges/type-challenges/blob/main/questions/00011-easy-tuple-to-object/README.md
-
 // difficulty: easy
 // tags: generics-with-constraints, mapped-types, index-accessed, learning-arrays
 
 /**
- * Given an array, transform it into an object type and the key/value must be in
- * the provided array.
+ * Update `TupleToObject` so that given an array, transform it into an object
+ * type and the key/value must be in the provided array.
  *
  * @example
  * ```
@@ -16,9 +14,7 @@ import { Expect, Equal } from 'type-testing';
  * ```
  */
 
-type TupleToObject<T extends readonly PropertyKey[]> = {
-  [P in T[number]]: P;
-};
+type TupleToObject<T> = unknown;
 
 const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const;
 const tupleNumber = [1, 2, 3, 4] as const;

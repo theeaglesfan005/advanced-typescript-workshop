@@ -1,20 +1,16 @@
-// source: https://github.com/type-challenges/type-challenges/blob/main/questions/02852-medium-omitbytype/README.md
+import { Expect, Equal } from 'type-testing';
 
 // difficulty: hard
 // tags: mapped-types, key-remapping, conditional-types, index-accessed, distribution
 
 /**
- * Create a version of the `Omit` utility type that allows omitting properties
- * of an object type based on types.
+ * Update `OmitByType` so that it is a variation of the `Omit` utility type
+ * that allows omitting properties of an object type based on types.
  *
  * Hint: https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#key-remapping-via-as
  */
 
-import { Expect, Equal } from 'type-testing';
-
-type OmitByType<T, U> = {
-  [key in keyof T as T[key] extends U ? never : key]: T[key];
-};
+type OmitByType<T, U> = unknown;
 
 interface Model {
   name: string;

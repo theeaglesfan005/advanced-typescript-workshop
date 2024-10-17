@@ -1,7 +1,5 @@
 import { Expect, Equal } from 'type-testing';
 
-// source: https://github.com/type-challenges/type-challenges/blob/main/questions/03326-medium-bem-style-string/README.md
-
 // difficulty: easy
 // tags: template-literals, conditional-types, distribution
 
@@ -19,9 +17,7 @@ import { Expect, Equal } from 'type-testing';
  * (can be empty).
  */
 
-type BEM<B extends string, E extends string[], M extends string[]> = `${B}${E extends []
-  ? ''
-  : `__${E[number]}`}${M extends [] ? '' : `--${M[number]}`}`;
+type BEM<B, E, M> = unknown;
 
 type cases = [
   Expect<Equal<BEM<'btn', ['price'], []>, 'btn__price'>>,

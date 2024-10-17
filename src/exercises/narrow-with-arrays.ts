@@ -15,21 +15,8 @@ interface Fruit {
   price: number;
 }
 
-// TODO: remove for solution
-// type WrapFruit = (fruits: never) => {
-//   getFruit: (name: never) => never;
-// };
-type WrapFruit = <TFruits extends Fruit[]>(
-  fruits: TFruits,
-) => {
-  getFruit: <TName extends TFruits[number]['name']>(
-    name: TName,
-  ) => Extract<
-    TFruits[number],
-    {
-      name: TName;
-    }
-  >;
+type WrapFruit = (fruits: never) => {
+  getFruit: (name: never) => never;
 };
 
 declare var wrapFruit: WrapFruit;

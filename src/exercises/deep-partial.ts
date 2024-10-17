@@ -4,18 +4,11 @@ import { Equal, Expect } from 'type-testing';
 // tags: conditional-types, mapped-types, utility-types, index-accessed, recursion
 
 /**
- * Create a variation of `Partial` that handles nested properties.
+ * Update `DeepPartial` to a variation of `Partial` that handles nested
+ * properties.
  */
 
-type DeepPartial<T> = T extends any[]
-  ? {
-      [K in keyof T]: T[K] extends Function ? T[K] : DeepPartial<T[K]>;
-    }
-  : T extends object
-    ? {
-        [K in keyof T]?: T[K] extends Function ? T[K] : DeepPartial<T[K]>;
-      }
-    : T;
+type DeepPartial<T> = unknown;
 
 type cases = [
   Expect<Equal<DeepPartial<{ moo: 'cow' }>, { moo?: 'cow' }>>,

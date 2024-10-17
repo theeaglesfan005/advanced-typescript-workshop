@@ -1,7 +1,5 @@
 import { Expect, Equal } from 'type-testing';
 
-// source: https://github.com/type-challenges/type-challenges/blob/main/questions/00020-medium-promise-all/README.md
-
 // difficulty: medium
 // tags: utility-types, learning-generics, generics-with-constraints, mapped-types, learning-arrays
 
@@ -13,12 +11,7 @@ import { Expect, Equal } from 'type-testing';
  * Hint: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types
  */
 
-declare function promiseAll<T extends any[]>(
-  values: readonly [...T],
-): Promise<{
-  [P in keyof T]: Awaited<T[P]>;
-  //   [P in keyof T]: T[P] extends Promise<infer K> ? K : T[P]// <-- doesn't work since the last test case requires unwrapping nested promises
-}>;
+declare function promiseAll<T>(values: unknown): Promise<unknown>;
 
 const promiseAllTest1 = promiseAll([1, 2, 3] as const);
 const promiseAllTest2 = promiseAll([1, 2, Promise.resolve(3)] as const);
