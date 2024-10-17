@@ -20,7 +20,6 @@ const TAGS = [
   'infer',
   'distribution',
   'recursion',
-  'todo', // TODO: remove
 ] as const;
 
 const TITLE_CASE_OVERRIDES = {
@@ -85,7 +84,7 @@ const getDifficulty = (file: string) => {
     throw new Error(`Unexpected invalid difficulty: ${difficulty}`);
   }
 
-  return difficulty;
+  return difficulty as Difficulty;
 };
 
 const getTags = (file: string) => {
@@ -100,6 +99,11 @@ const getTags = (file: string) => {
     .split(',')
     .map((tag) => tag.trim());
 
+  const difficulties = rawTags
+    .slice('// difficulty:'.length)
+    .split(',')
+    .map((tag) => tag.trim());
+
   const unknownTag = tags.find((tag) => !TAGS.includes(tag as Tag));
 
   if (unknownTag) {
@@ -110,30 +114,32 @@ const getTags = (file: string) => {
 };
 
 const main = async () => {
-  const filepaths = await glob(['./src/exercises/*.ts', './src/pending/*.ts'], {
+  const filepaths = await glob(['./src/exercises/*.ts'], {
     nodir: true,
   });
 
-  const sets = await Promise.all(
-    filepaths.map((filepath) =>
-      readFile(filepath, { encoding: 'utf8' }).then((file) => {
-        try {
-          return {
-            filepath,
-            url: getUrl(filepath),
-            difficulty: getDifficulty(file),
-            tags: getTags(file),
-            exercise: getExerciseName(filepath),
-          };
-        } catch (e) {
-          console.error(`Unexpected issue with file at ${filepath}`);
-          throw e;
-        }
-      }),
-    ),
-  );
+  const entries = (
+    await Promise.all(
+      filepaths.map((filepath) =>
+        readFile(filepath, { encoding: 'utf8' }).then((file) => {
+          try {
+            return {
+              filepath,
+              url: getUrl(filepath),
+              difficulty: getDifficulty(file),
+              tags: getTags(file),
+              exercise: getExerciseName(filepath),
+            };
+          } catch (e) {
+            console.error(`Unexpected issue with file at ${filepath}`);
+            throw e;
+          }
+        }),
+      ),
+    )
+  ).sort((a, b) => a.exercise.localeCompare(b.exercise));
 
-  const counts = TAGS.reduce(
+  const tagCounts = TAGS.reduce(
     (acc, tag) => {
       acc[tag] = 0;
       return acc;
@@ -141,15 +147,28 @@ const main = async () => {
     {} as Record<Tag, number>,
   );
 
-  // TODO: handle that there's dup counts for extreme version of exercise
+  entries.forEach(({ tags }) => {
+    tags.forEach((tag) => (tagCounts[tag] += 1));
+  });
 
-  sets.forEach(({ tags }) => {
-    tags.forEach((tag) => (counts[tag] += 1));
+  const difficultyCounts = DIFFICULTIES.reduce(
+    (acc, difficulty) => {
+      acc[difficulty] = 0;
+      return acc;
+    },
+    {} as Record<Difficulty, number>,
+  );
+
+  entries.forEach(({ difficulty }) => {
+    difficultyCounts[difficulty] += 1;
   });
 
   const output = {
-    files: sets,
-    counts,
+    entries,
+    tags: TAGS,
+    difficulties: DIFFICULTIES,
+    tagCounts,
+    difficultyCounts,
   };
 
   console.log(output);
