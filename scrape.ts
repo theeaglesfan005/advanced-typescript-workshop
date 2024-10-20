@@ -5,7 +5,7 @@ import { glob } from 'glob';
 import { readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 
-const ROOT = 'https://github.com/m-thompson-code/advanced-typescript-workshop/tree/main';
+const ROOT = 'github.com/m-thompson-code/advanced-typescript-workshop/tree/main';
 const DIFFICULTIES = ['easy', 'medium', 'hard', 'extreme'] as const;
 const TAGS = [
   'conditional-types',
@@ -74,7 +74,7 @@ const getExerciseName = (filepath: string) => {
 };
 
 const getUrl = (filepath: string) => {
-  return join(ROOT, filepath);
+  return `https://${join(ROOT, filepath)}`;
 };
 
 const getDifficulty = (file: string) => {
