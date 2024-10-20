@@ -41,12 +41,18 @@ const TITLE_CASE_REPLACES = {
 type Difficulty = (typeof DIFFICULTIES)[number];
 type Tag = (typeof TAGS)[number];
 
+const getExerciseFilename = (filepath: string) => {
+  // Remove path and file extension
+  const filename = (filepath.split('/').at(-1) as string).split('.')[0].toLowerCase();
+
+  return filename;
+};
+
 const getExerciseName = (filepath: string) => {
   // Remove path and file extension
-  const filename = (filepath.split('/').at(-1) as string).split('.')[0];
+  const filename = getExerciseFilename(filepath);
 
   let titleCaseFileName = filename
-    .toLowerCase()
     .replace(/(?:^|[\s-/])\w/g, function (match) {
       return match.toUpperCase();
     })
@@ -128,6 +134,7 @@ const main = async () => {
               url: getUrl(filepath),
               difficulty: getDifficulty(file),
               tags: getTags(file),
+              filename: getExerciseFilename(filepath),
               exercise: getExerciseName(filepath),
             };
           } catch (e) {
