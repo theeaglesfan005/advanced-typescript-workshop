@@ -1,5 +1,6 @@
 import { Expect, Equal } from 'type-testing';
 
+// Check me
 // difficulty: medium 3/4
 // tags: utility-types, learning-generics, generics-with-constraints, mapped-types, learning-arrays
 

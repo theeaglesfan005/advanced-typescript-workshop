@@ -1,5 +1,6 @@
 import { Equal, Expect } from 'type-testing';
 
+// Check me
 // difficulty: easy 2
 // tags: utility-types
 

@@ -1,5 +1,6 @@
 import { Equal, Expect } from 'type-testing';
 
+// Check me
 // difficulty: medium 2/3
 // tags: recursion, conditional-types, infer, template-literals, distribution
 

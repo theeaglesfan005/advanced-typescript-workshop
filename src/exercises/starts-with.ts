@@ -1,5 +1,6 @@
 import { Expect, Equal } from 'type-testing';
 
+// Check me
 // difficulty: easy 1/2
 // tags: conditional-types, generics-with-constraints, template-literals
 
