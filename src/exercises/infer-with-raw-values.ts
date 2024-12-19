@@ -1,6 +1,6 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: easy
+// difficulty: easy 1
 // tags: conditional-types, index-accessed, generics-with-constraints
 
 /**

@@ -2,7 +2,7 @@ import { Expect, Equal } from 'type-testing';
 
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/00268-easy-if/test-cases.ts
 
-// difficulty: medium
+// difficulty: medium 3
 // tags: conditional-types, index-accessed
 
 /**

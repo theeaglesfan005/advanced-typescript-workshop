@@ -1,10 +1,10 @@
 import { Expect, Equal } from 'type-testing';
 
-// difficulty: medium
+// difficulty: medium 3/4
 // tags: conditional-types, index-accessed
 
 /**
- * Update `AnyOf` to implement a Python-liked any function in the type system. A
+ * Update `AnyOf` to implement a Python-like any function in the type system. A
  * type takes the Array and returns true if any element of the Array is true. If
  * the Array is empty, return false.
  */

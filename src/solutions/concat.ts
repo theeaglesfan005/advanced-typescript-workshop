@@ -2,7 +2,7 @@ import { Equal, Expect } from 'type-testing';
 
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/00533-easy-concat/README.md
 
-// difficulty: easy
+// difficulty: easy 1
 // tags: learning-generics, generics-with-constraints, learning-arrays
 
 /**

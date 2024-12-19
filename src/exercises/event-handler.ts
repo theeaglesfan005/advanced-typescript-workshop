@@ -1,6 +1,6 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: medium
+// difficulty: medium 3/4
 // tags: template-literals, utility-types, generics-with-constraints, distribution
 
 /**

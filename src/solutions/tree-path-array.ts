@@ -1,6 +1,6 @@
 import { Equal, Expect, NotEqual } from 'type-testing';
 
-// difficulty: hard
+// difficulty: hard 5
 // tags: index-accessed, conditional-types, learning-arrays, recursion
 
 /**

@@ -1,6 +1,6 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: medium
+// difficulty: medium 3
 // tags: mapped-types, conditional-types, index-accessed, key-remapping, infer, distribution
 
 /**
@@ -24,6 +24,7 @@ type Route =
 
 type RoutesObject = unknown;
 
+// TODO: add more cases
 type cases = [
   Expect<
     Equal<

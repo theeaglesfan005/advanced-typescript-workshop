@@ -1,4 +1,4 @@
-// difficulty: easy
+// difficulty: easy 2/3
 // tags: learning-generics, learning-arrays
 
 /**

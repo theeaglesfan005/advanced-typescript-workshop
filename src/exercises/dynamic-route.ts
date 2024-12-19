@@ -1,7 +1,7 @@
 import { Equal, Expect } from 'type-testing';
 import { Prettify } from '../prettify';
 
-// difficulty: extreme
+// difficulty: extreme 7
 // tags: conditional-types, mapped-types, utility-types, index-accessed, recursion, learning-arrays, template-literals, distribution, infer
 
 /**

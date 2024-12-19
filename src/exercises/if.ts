@@ -1,6 +1,6 @@
 import { Expect, Equal } from 'type-testing';
 
-// difficulty: easy
+// difficulty: easy 1
 // tags: conditional-types, distribution, generics-with-constraints
 
 /**

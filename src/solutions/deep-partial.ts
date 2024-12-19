@@ -1,6 +1,6 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: hard
+// difficulty: hard 5
 // tags: conditional-types, mapped-types, utility-types, index-accessed, recursion
 
 /**

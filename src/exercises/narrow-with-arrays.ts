@@ -2,7 +2,7 @@ import { Equal, Expect } from 'type-testing';
 
 // source: https://github.com/total-typescript/advanced-patterns-workshop/blob/main/src/07-challenges/32-narrow-with-arrays.solution.ts
 
-// difficulty: medium
+// difficulty: medium 3
 // tags: utility-types, generics-with-constraints, index-accessed, learning-generics, learning-arrays
 
 /**

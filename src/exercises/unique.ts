@@ -1,6 +1,6 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: hard
+// difficulty: hard 5
 // tags: learning-arrays, generics-with-constraints, index-accessed, recursion, conditional-types, infer, distribution
 
 /**
