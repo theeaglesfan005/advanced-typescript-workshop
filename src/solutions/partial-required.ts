@@ -1,15 +1,13 @@
 import { Expect, Equal } from 'type-testing';
 import { Prettify } from '../prettify';
 
-// difficulty: medium
+// complexity: 6
 // tags: utility-types, learning-generics, generics-with-constraints
 
-/**
- * Turns out the backend types are unreliable some properties are optional.
- *
- * Update `PartialRequired` so that it is a variation of `Partial` that can
- * accepts a union of string literals.
- */
+// Turns out the backend types are unreliable some properties are optional.
+//
+// Update `PartialRequired` so that it is a variation of `Partial` that can
+// accepts a union of string literals.
 
 type PartialRequired<T, Keys extends keyof T> = Required<Pick<T, Keys>> & Omit<T, Keys>;
 

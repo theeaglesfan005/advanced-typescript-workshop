@@ -1,12 +1,10 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: easy 2
+// complexity: 3
 // tags: conditional-types, distribution
 
-/**
- * Update `GetParserResult` so that it is the return type of the following 3
- * parsers.
- */
+// Update `GetParserResult` so that it is the return type of the following 3
+// parsers.
 
 const parser1 = {
   parse: () => 1,

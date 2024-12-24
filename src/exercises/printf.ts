@@ -1,22 +1,19 @@
 import { Expect, Equal } from 'type-testing';
 
-// Check me
-// difficulty: hard 5
+// complexity: 9
 // tags: conditional-types, index-accessed, template-literals, infer, recursion
 
-/**
- * There is a function in C language: printf. This function allows us to print
- * something with formatting. Like this:
- *
- * @example
- * ```
- * printf("The result is %d.", 42);
- * ```
- *
- * Update `ParsePrintFormat` so that it parses the input string and extracts the
- * format placeholders like %d and %f. For example, if the input string is
- * "The result is %d.", the parsed result is a tuple ['dec'].
- */
+// There is a function in C language: printf. This function allows us to print
+// something with formatting. Like this:
+//
+// @example
+// ```
+// printf("The result is %d.", 42);
+// ```
+//
+// Update `ParsePrintFormat` so that it parses the input string and extracts the
+// format placeholders like %d and %f. For example, if the input string is
+// "The result is %d.", the parsed result is a tuple ['dec'].
 
 type ControlsMap = {
   c: 'char';

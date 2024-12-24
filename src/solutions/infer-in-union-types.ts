@@ -2,13 +2,11 @@ import { Equal, Expect } from 'type-testing';
 
 // source: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/04-conditional-types-and-infer/27-infer-in-union-types.solution.2.ts
 
-// difficulty: easy
+// complexity: 3
 // tags: conditional-types, distribution
 
-/**
- * Update `GetParserResult` so that it is the return type of the following 3
- * parsers.
- */
+// Update `GetParserResult` so that it is the return type of the following 3
+// parsers.
 
 const parser1 = {
   parse: () => 1,

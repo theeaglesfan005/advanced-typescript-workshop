@@ -1,13 +1,10 @@
 import { Equal, Expect } from 'type-testing';
 
-// Check me
-// difficulty: easy 2
+// complexity: 3
 // tags: utility-types
 
-/**
- * Update the type `TeamMember` so that it includes the common properties
- * between Developer and Manager, with their types from each interface.
- */
+// Update the type `TeamMember` so that it includes the common properties
+// between Developer and Manager, with their types from each interface.
 
 interface Developer {
   name: string;

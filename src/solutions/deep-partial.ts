@@ -1,12 +1,10 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: hard 5
+// complexity: 9
 // tags: conditional-types, mapped-types, utility-types, index-accessed, recursion
 
-/**
- * Update `DeepPartial` to a variation of `Partial` that handles nested
- * properties.
- */
+// Update `DeepPartial` to a variation of `Partial` that handles nested
+// properties.
 
 type DeepPartial<T> = T extends any[]
   ? {

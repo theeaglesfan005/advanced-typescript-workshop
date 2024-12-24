@@ -1,13 +1,10 @@
 import { Expect, Equal } from 'type-testing';
 
-// Check me
-// difficulty: hard 3/4
+// complexity: 6
 // tags: generics-with-constraints, conditional-types, template-literals, infer
 
-/**
- * Implement Replace<S, From, To> which replace the string From with To once in
- * the given string S.
- */
+// Implement Replace<S, From, To> which replace the string From with To once in
+// the given string S.
 
 type Replace<S, From, To> = unknown;
 

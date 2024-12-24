@@ -2,16 +2,17 @@ import { Expect, Equal } from 'type-testing';
 
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/00020-medium-promise-all/README.md
 
-// difficulty: medium 3/4
+// complexity: 6
 // tags: utility-types, learning-generics, generics-with-constraints, mapped-types, learning-arrays
 
-/**
- * Type the function `PromiseAll` that accepts an array of PromiseLike objects,
- * the returning value should be Promise<T> where T is the resolved result
- * array.
- *
- * Hint: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types
- */
+// Type the function `PromiseAll` that accepts an array of PromiseLike objects,
+// the returning value should be Promise<T> where T is the resolved result
+// array.
+//
+// The proposed solution suggests using the built-in utility type Awaited.
+// https://www.typescriptlang.org/docs/handbook/utility-types.html#awaitedtype
+//
+// Hint: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types
 
 declare function promiseAll<T extends any[]>(
   values: readonly [...T],

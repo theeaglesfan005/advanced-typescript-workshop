@@ -1,14 +1,12 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: extreme 7
+// complexity: 10
 // tags: learning-arrays, generics-with-constraints, index-accessed, recursion, conditional-types, infer, distribution
 
-/**
- * Update `Unique` so that it removes any duplicate numbers, strings, unknowns,
- * any's, or nevers in an array.
- *
- * Hint: you need to use `Equal` from `type-testing` to check for equalities.
- */
+// Update `Unique` so that it removes any duplicate numbers, strings, unknowns,
+// any's, or nevers in an array.
+//
+// Hint: you need to use `Equal` from `type-testing` to check for equalities.
 
 type Unique<TInput, TOutput> = unknown;
 

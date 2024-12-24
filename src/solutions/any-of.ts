@@ -2,14 +2,12 @@ import { Expect, Equal } from 'type-testing';
 
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/00268-easy-if/test-cases.ts
 
-// difficulty: medium 3
+// complexity: 6
 // tags: conditional-types, index-accessed
 
-/**
- * Update `AnyOf` to implement a Python-liked any function in the type system. A
- * type takes the Array and returns true if any element of the Array is true. If
- * the Array is empty, return false.
- */
+// Update `AnyOf` to implement a Python-like any function in the type system. A
+// type takes the Array and returns true if any element of the Array is true. If
+// the Array is empty, return false.
 
 type AnyOf<T extends any[]> = T[number] extends 0 | '' | false | [] | { [key: string]: never } | null | undefined
   ? false

@@ -1,9 +1,7 @@
-// difficulty: easy 2/3
+// complexity: 4
 // tags: learning-generics, learning-arrays
 
-/**
- * Update `makeEnum` so that the argument cannot be an empty array.
- */
+// Update `makeEnum` so that the argument cannot be an empty array.
 
 type NonEmptyArray<T> = unknown;
 

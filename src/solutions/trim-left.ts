@@ -2,13 +2,11 @@ import { Equal, Expect } from 'type-testing';
 
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/00106-medium-trimleft/README.md
 
-// difficulty: medium
+// complexity: 4
 // tags: recursion, conditional-types, infer, template-literals, distribution
 
-/**
- * Update `TrimLeft` which takes an exact string type and returns a new string
- * with the whitespace beginning removed.
- */
+// Update `TrimLeft` which takes an exact string type and returns a new string
+// with the whitespace beginning removed.
 
 type Space = ' ' | '\t' | '\n';
 

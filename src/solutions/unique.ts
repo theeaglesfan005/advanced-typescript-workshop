@@ -2,13 +2,11 @@ import { Equal, Expect } from 'type-testing';
 
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/05360-medium-unique/README.md
 
-// difficulty: hard
+// complexity: 9
 // tags: learning-arrays, generics-with-constraints, index-accessed, recursion, conditional-types, infer, distribution
 
-/**
- * Update `Unique` so that it removes any duplicate numbers, strings in an
- * array.
- */
+// Update `Unique` so that it removes any duplicate numbers, strings in an
+// array.
 
 type Unique<TInput extends any[], TOutput extends any[] = []> = TInput extends []
   ? TOutput

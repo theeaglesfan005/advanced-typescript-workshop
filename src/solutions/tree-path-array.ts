@@ -1,12 +1,10 @@
 import { Equal, Expect, NotEqual } from 'type-testing';
 
-// difficulty: hard
+// complexity: 9
 // tags: index-accessed, conditional-types, learning-arrays, recursion
 
-/**
- * Update the type `Path` so that it represents validates a possible path of a
- * tree under the form of an array.
- */
+// Update the type `Path` so that it represents validates a possible path of a
+// tree under the form of an array.
 
 type Path<T> =
   T extends Record<PropertyKey, unknown>

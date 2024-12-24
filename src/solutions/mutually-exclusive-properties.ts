@@ -2,13 +2,11 @@ import { Equal, Expect } from 'type-testing';
 
 // sources: https://github.com/total-typescript/type-transformations-workshop/blob/main/src/06-challenges/38-mutually-exclusive-properties.solution.ts
 
-// difficulty: medium
+// complexity: 4
 // tags: mapped-types, index-accessed
 
-/**
- * Update `MutuallyExclusive` so that it unions an separate object type for
- * every property of a single object.
- */
+// Update `MutuallyExclusive` so that it unions an separate object type for
+// each property of a single object.
 
 interface Attributes {
   id: string;

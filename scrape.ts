@@ -1,12 +1,13 @@
 /**
  * Hi nosy parker! This internal file has nothing to do with the exercises.
  */
+
 import { glob } from 'glob';
 import { readFile, writeFile } from 'fs/promises';
 import { join } from 'path';
 
 const ROOT = 'github.com/m-thompson-code/advanced-typescript-workshop/tree/main';
-const DIFFICULTIES = ['easy', 'medium', 'hard', 'extreme'] as const;
+const COMPLEXITIES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 const TAGS = [
   'conditional-types',
   'index-accessed',
@@ -38,7 +39,7 @@ const TITLE_CASE_REPLACES = {
   'Any of': 'Any Of',
 } as const;
 
-type Difficulty = (typeof DIFFICULTIES)[number];
+type Complexity = (typeof COMPLEXITIES)[number];
 type Tag = (typeof TAGS)[number];
 
 const getExerciseFilename = (filepath: string) => {
@@ -77,20 +78,20 @@ const getUrl = (filepath: string) => {
   return `https://${join(ROOT, filepath)}`;
 };
 
-const getDifficulty = (file: string) => {
-  const rawDifficulty = file.split('\n').find((line) => line.startsWith('// difficulty:'));
+const getComplexity = (file: string) => {
+  const rawComplexity = file.split('\n').find((line) => line.startsWith('// complexity:'));
 
-  if (!rawDifficulty) {
-    throw new Error('Unexpected missing difficulty');
+  if (!rawComplexity) {
+    throw new Error('Unexpected missing complexity');
   }
 
-  const difficulty = rawDifficulty.slice('// difficulty:'.length).trim();
+  const complexity = Number(rawComplexity.slice('// complexity:'.length).trim());
 
-  if (!DIFFICULTIES.includes(difficulty as Difficulty)) {
-    throw new Error(`Unexpected invalid difficulty: ${difficulty}`);
+  if (!COMPLEXITIES.includes(complexity as Complexity)) {
+    throw new Error(`Unexpected invalid complexity: ${complexity}`);
   }
 
-  return difficulty as Difficulty;
+  return complexity as Complexity;
 };
 
 const getTags = (file: string) => {
@@ -106,7 +107,7 @@ const getTags = (file: string) => {
     .map((tag) => tag.trim());
 
   const difficulties = rawTags
-    .slice('// difficulty:'.length)
+    .slice('// complexity:'.length)
     .split(',')
     .map((tag) => tag.trim());
 
@@ -132,7 +133,7 @@ const main = async () => {
             return {
               filepath,
               url: getUrl(filepath),
-              difficulty: getDifficulty(file),
+              complexity: getComplexity(file),
               tags: getTags(file),
               filename: getExerciseFilename(filepath),
               exercise: getExerciseName(filepath),
@@ -158,24 +159,24 @@ const main = async () => {
     tags.forEach((tag) => (tagCounts[tag] += 1));
   });
 
-  const difficultyCounts = DIFFICULTIES.reduce(
-    (acc, difficulty) => {
-      acc[difficulty] = 0;
+  const complexityCounts = COMPLEXITIES.reduce(
+    (acc, complexity) => {
+      acc[complexity] = 0;
       return acc;
     },
-    {} as Record<Difficulty, number>,
+    {} as Record<Complexity, number>,
   );
 
-  entries.forEach(({ difficulty }) => {
-    difficultyCounts[difficulty] += 1;
+  entries.forEach(({ complexity }) => {
+    complexityCounts[complexity] += 1;
   });
 
   const output = {
     entries,
     tags: TAGS,
-    difficulties: DIFFICULTIES,
+    difficulties: COMPLEXITIES,
     tagCounts,
-    difficultyCounts,
+    complexityCounts,
   };
 
   console.log(output);

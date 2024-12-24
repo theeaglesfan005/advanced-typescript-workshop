@@ -1,14 +1,12 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: medium 3
+// complexity: 5
 // tags: mapped-types, conditional-types, index-accessed, key-remapping, infer, distribution
 
-/**
- * Update `RoutesObject` so that each key of the object type is the route listed
- * in `Route` and the value is the search object type.
- *
- * Hint: https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#key-remapping-via-as
- */
+// Update `RoutesObject` so that each key of the object type is the route listed
+// in `Route` and the value is the search object type.
+//
+// Hint: https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#key-remapping-via-as
 
 type Route =
   | {

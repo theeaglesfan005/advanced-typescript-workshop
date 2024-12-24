@@ -1,13 +1,13 @@
-// difficulty: easy
-// tags: utility-types
-
 // source: https://github.com/total-typescript/advanced-patterns-workshop/blob/main/src/06-identity-functions/29-finite-state-machine.problem.ts
 
-/**
- * Update the types below so that there's no type errors.
- *
- * Hint: This is a one-liner fix!
- */
+// complexity: 1
+// tags: utility-types
+
+// Update the `FSMConfig` type below so that there's no type errors for this
+// file.
+//
+// Hint: This is a one-liner fix involving the NoInfer utility type
+// https://www.typescriptlang.org/docs/handbook/utility-types.html#noinfertype
 
 interface FSMConfig<TState extends string> {
   initial: NoInfer<TState>;

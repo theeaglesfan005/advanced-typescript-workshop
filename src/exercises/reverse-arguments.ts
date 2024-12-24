@@ -1,19 +1,16 @@
 import { Expect, Equal } from 'type-testing';
 
-// Check me
-// difficulty: hard 4/5
+// complexity: 8
 // tags: utility-types, learning-arrays, conditional-types, infer, recursion, generics-with-constraints
 
-/**
- * Implement the type version of lodash's _.flip.
- *
- * Type FlipArguments<T> requires function type T and returns a new function type which has the same return type of T but reversed parameters.
- * @example
- * ```
- * type Flipped = FlipArguments<(arg0: string, arg1: number, arg2: boolean) => void>
- * //   ^? (arg0: boolean, arg1: number, arg2: string) => void
- * ```
- */
+// Implement the type version of lodash's _.flip.
+//
+// Type FlipArguments<T> requires function type T and returns a new function type which has the same return type of T but reversed parameters.
+// @example
+// ```
+// type Flipped = FlipArguments<(arg0: string, arg1: number, arg2: boolean) => void>
+// //   ^? (arg0: boolean, arg1: number, arg2: string) => void
+// ```
 
 type FlipArguments<T> = unknown;
 

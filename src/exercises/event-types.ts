@@ -1,11 +1,11 @@
-// difficulty: medium 3
+// complexity: 5
 // tags: utility-types, generics-with-constraints, index-accessed, learning-generics
 
-// TODO: describe updating the payload type
-/**
- * Update `emit` so that the first argument is the union of types from `Events`
- * and the second argument is the rest of the object except the type property.
- */
+// Update `emit` so that the first argument constraint to the union of types
+// from `Events`, and the second argument is the rest of the object except the
+// type property.
+//
+// The payload argument needs to be updated.
 
 type Events =
   | { type: 'click'; clicks: number }
@@ -13,6 +13,7 @@ type Events =
   | { type: 'update'; updates: string; timestamp: Date }
   | { type: 'loaded'; success: boolean };
 
+// Update this function
 declare function emit<K>(type: K, payload: unknown): void;
 
 emit('click', { clicks: 42 });

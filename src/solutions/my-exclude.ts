@@ -2,14 +2,12 @@ import { Expect, Equal } from 'type-testing';
 
 // source: https://typehero.dev/challenge/exclude/solutions/148
 
-// difficulty: easy
+// complexity: 3
 // tags: utility-types, conditional-types, distribution
 
-/**
- * Implement the built-in Exclude<T, U>
- *
- * Exclude from T those types that are assignable to U
- */
+// Implement the built-in Exclude<T, U>
+//
+// Exclude from T those types that are assignable to U
 
 type MyExclude<T, U> = T extends U ? never : T;
 

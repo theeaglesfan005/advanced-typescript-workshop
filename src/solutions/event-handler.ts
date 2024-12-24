@@ -1,15 +1,13 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: medium 3/4
+// complexity: 6
 // tags: template-literals, utility-types, generics-with-constraints, distribution
 
-/**
- * Update `EventTypes` to create a union of a the type arguments for any "on"
- * event handler: `onClick`, `onError`, `onHover`.
- *
- * Consider how to implement this so that, new EventHandlers can be added to
- * `Props` without having to update `EventTypes` again.
- */
+// Update `EventTypes` to create a union of a the type arguments for any "on"
+// event handler: `onClick`, `onError`, `onHover`.
+//
+// Consider how to implement this so that, new EventHandlers can be added to
+// `Props` without having to update `EventTypes` again.
 
 type EventHandler<T extends string> = (type: T, event: unknown) => void;
 

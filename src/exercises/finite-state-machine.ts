@@ -1,14 +1,11 @@
-// difficulty: easy
+// complexity: 1
 // tags: utility-types
 
-// Add notes that there's type errors below, and there's only 1 line that needs to be changed for FSMConfig
-// Include docs on NoInfer
-
-/**
- * Update the types below so that there's no type errors.
- *
- * Hint: This is a one-liner fix!
- */
+// Update the `FSMConfig` type below so that there's no type errors for this
+// file.
+//
+// Hint: This is a one-liner fix involving the NoInfer utility type
+// https://www.typescriptlang.org/docs/handbook/utility-types.html#noinfertype
 
 interface FSMConfig<TState extends string> {
   initial: TState;

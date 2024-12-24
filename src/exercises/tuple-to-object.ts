@@ -1,19 +1,16 @@
 import { Expect, Equal } from 'type-testing';
 
-// Check me
-// difficulty: easy 2/3
+// complexity: 4
 // tags: generics-with-constraints, mapped-types, index-accessed, learning-arrays
 
-/**
- * Update `TupleToObject` so that given an array, transform it into an object
- * type and the key/value must be in the provided array.
- *
- * @example
- * ```
- * const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
- * type result = TupleToObject<typeof tuple> // expected { 'tesla': 'tesla', 'model 3': 'model 3', 'model X': 'model X', 'model Y': 'model Y'}
- * ```
- */
+// Update `TupleToObject` so that given an array, transform it into an object
+// type and the key/value must be in the provided array.
+//
+// @example
+// ```
+// const tuple = ['tesla', 'model 3', 'model X', 'model Y'] as const
+// type result = TupleToObject<typeof tuple> // expected { 'tesla': 'tesla', 'model 3': 'model 3', 'model X': 'model X', 'model Y': 'model Y'}
+// ```
 
 type TupleToObject<T> = unknown;
 

@@ -1,11 +1,9 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: easy 1
+// complexity: 1
 // tags: conditional-types, index-accessed, generics-with-constraints
 
-/**
- * Update `GetDataValue` so that it returns the type of the `data` property.
- */
+// Update `GetDataValue` so that it returns the type of the `data` property.
 
 type GetDataValue<T> = unknown;
 

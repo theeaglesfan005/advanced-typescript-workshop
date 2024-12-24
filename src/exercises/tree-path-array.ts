@@ -1,13 +1,10 @@
 import { Equal, Expect, NotEqual } from 'type-testing';
 
-// Check me
-// difficulty: hard 5
+// complexity: 9
 // tags: index-accessed, conditional-types, learning-arrays, recursion
 
-/**
- * Update the type `Path` so that it represents validates a possible path of a
- * tree under the form of an array.
- */
+// Update the type `Path` so that it represents validates a possible path of a
+// tree under the form of an array.
 
 type Path<T> = unknown;
 

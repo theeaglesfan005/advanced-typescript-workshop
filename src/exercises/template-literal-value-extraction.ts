@@ -1,13 +1,10 @@
 import { Equal, Expect } from 'type-testing';
 
-// Check me
-// difficulty: easy 1/2
+// complexity: 2
 // tags: conditional-types, infer, template-literals
 
-/**
- * Update `GetSurname` so that it returns the surname of a string assuming
- * there's only a given name and surname.
- */
+// Update `GetSurname` so that it returns the surname of a string assuming
+// there's only a given name and surname.
 
 type GetSurname<T> = unknown;
 

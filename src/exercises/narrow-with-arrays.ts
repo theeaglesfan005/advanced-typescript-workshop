@@ -2,13 +2,11 @@ import { Equal, Expect } from 'type-testing';
 
 // source: https://github.com/total-typescript/advanced-patterns-workshop/blob/main/src/07-challenges/32-narrow-with-arrays.solution.ts
 
-// difficulty: medium 3
+// complexity: 5
 // tags: utility-types, generics-with-constraints, index-accessed, learning-generics, learning-arrays
 
-/**
- * Update the type for `WrapFruit` so that the `getFruit` function takes in a
- * `name` argument and returns the object from the array used.
- */
+// Update the type for `WrapFruit` so that the `getFruit` function takes in a
+// `name` argument and returns the object from the array used.
 
 interface Fruit {
   name: string;

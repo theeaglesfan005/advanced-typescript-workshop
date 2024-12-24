@@ -1,13 +1,11 @@
 import { Expect, Equal } from 'type-testing';
 
-// difficulty: easy 2
+// complexity: 3
 // tags: utility-types, conditional-types, distribution
 
-/**
- * Implement the built-in Exclude<T, U>
- *
- * Exclude from T those types that are assignable to U
- */
+// Implement the built-in Exclude<T, U>
+//
+// Exclude from T those types that are assignable to U
 
 type MyExclude<T, U> = unknown;
 

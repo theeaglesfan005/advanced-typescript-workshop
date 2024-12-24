@@ -1,13 +1,11 @@
 import { Expect, Equal } from 'type-testing';
 
-// difficulty: medium 3/4
+// complexity: 6
 // tags: conditional-types, index-accessed
 
-/**
- * Update `AnyOf` to implement a Python-like any function in the type system. A
- * type takes the Array and returns true if any element of the Array is true. If
- * the Array is empty, return false.
- */
+// Update `AnyOf` to implement a Python-like any function in the type system. A
+// type takes the Array and returns true if any element of the Array is true. If
+// the Array is empty, return false.
 
 type AnyOf<T extends any[]> = unknown;
 

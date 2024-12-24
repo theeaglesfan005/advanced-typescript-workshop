@@ -1,11 +1,9 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: easy 1
+// complexity: 1
 // tags: conditional-types, index-accessed, generics-with-constraints, infer, learning-arrays, learning-generics
 
-/**
- * For given a tuple, update the `Length` type such that it returns the length.
- */
+// For given a tuple, update the `Length` type such that it returns the length.
 
 type Tesla = ['tesla', 'model 3', 'model X', 'model Y'];
 type SpaceX = ['FALCON 9', 'FALCON HEAVY', 'DRAGON', 'STARSHIP', 'HUMAN SPACEFLIGHT'];
