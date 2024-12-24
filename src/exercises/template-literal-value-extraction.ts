@@ -1,6 +1,7 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: easy
+// Check me
+// difficulty: easy 1/2
 // tags: conditional-types, infer, template-literals
 
 /**

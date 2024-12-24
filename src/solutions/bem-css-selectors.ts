@@ -2,7 +2,7 @@ import { Expect, Equal } from 'type-testing';
 
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/03326-medium-bem-style-string/README.md
 
-// difficulty: easy
+// difficulty: easy 4
 // tags: template-literals, conditional-types, distribution
 
 /**

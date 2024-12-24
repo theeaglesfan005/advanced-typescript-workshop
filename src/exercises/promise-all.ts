@@ -1,8 +1,10 @@
 import { Expect, Equal } from 'type-testing';
 
-// difficulty: medium
+// Check me
+// difficulty: medium 3/4
 // tags: utility-types, learning-generics, generics-with-constraints, mapped-types, learning-arrays
 
+// TODO: add notes on Awaited as a hint
 /**
  * Type the function `PromiseAll` that accepts an array of PromiseLike objects,
  * the returning value should be Promise<T> where T is the resolved result

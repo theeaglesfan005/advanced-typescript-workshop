@@ -1,6 +1,7 @@
 import { Expect, Equal } from 'type-testing';
 
-// difficulty: easy
+// Check me
+// difficulty: easy 1
 // tags: utility-types, learning-generics
 
 /**

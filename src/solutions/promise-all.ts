@@ -2,7 +2,7 @@ import { Expect, Equal } from 'type-testing';
 
 // source: https://github.com/type-challenges/type-challenges/blob/main/questions/00020-medium-promise-all/README.md
 
-// difficulty: medium
+// difficulty: medium 3/4
 // tags: utility-types, learning-generics, generics-with-constraints, mapped-types, learning-arrays
 
 /**

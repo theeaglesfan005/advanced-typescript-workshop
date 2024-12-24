@@ -1,6 +1,7 @@
-// difficulty: medium
+// difficulty: medium 3
 // tags: utility-types, generics-with-constraints, index-accessed, learning-generics
 
+// TODO: describe updating the payload type
 /**
  * Update `emit` so that the first argument is the union of types from `Events`
  * and the second argument is the rest of the object except the type property.

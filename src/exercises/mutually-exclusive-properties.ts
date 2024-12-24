@@ -1,11 +1,11 @@
 import { Equal, Expect } from 'type-testing';
 
-// difficulty: medium
+// difficulty: medium 2/3
 // tags: mapped-types, index-accessed
 
 /**
  * Update `MutuallyExclusive` so that it unions an separate object type for
- * every property of a single object.
+ * each property of a single object.
  */
 
 interface Attributes {

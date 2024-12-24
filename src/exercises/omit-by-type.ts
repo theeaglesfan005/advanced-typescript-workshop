@@ -1,6 +1,6 @@
 import { Expect, Equal } from 'type-testing';
 
-// difficulty: hard
+// difficulty: hard 3/4
 // tags: mapped-types, key-remapping, conditional-types, index-accessed, distribution
 
 /**

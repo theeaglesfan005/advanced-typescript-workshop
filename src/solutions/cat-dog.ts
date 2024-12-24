@@ -1,4 +1,4 @@
-// difficulty: easy
+// difficulty: easy 2
 // tags: learning-generics, utility-types, generics-with-constraints
 
 /**

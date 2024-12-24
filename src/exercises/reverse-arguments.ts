@@ -1,6 +1,7 @@
 import { Expect, Equal } from 'type-testing';
 
-// difficulty: hard
+// Check me
+// difficulty: hard 4/5
 // tags: utility-types, learning-arrays, conditional-types, infer, recursion, generics-with-constraints
 
 /**

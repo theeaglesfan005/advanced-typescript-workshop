@@ -1,6 +1,7 @@
 import { Expect, Equal } from 'type-testing';
 
-// difficulty: easy
+// Check me
+// difficulty: easy 2/3
 // tags: generics-with-constraints, mapped-types, index-accessed, learning-arrays
 
 /**
