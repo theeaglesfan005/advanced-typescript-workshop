@@ -13,7 +13,7 @@ const carsByBrand = {
   Subaru: 'green',
 } as const;
 
-declare function getCarColor(brand: string): string;
+declare function getCarColor<T extends keyof typeof carsByBrand>(brand: T): (typeof carsByBrand)[T];
 
 const audi = getCarColor('Audi');
 const ford = getCarColor('Ford');
